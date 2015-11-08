@@ -21,3 +21,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.status {
+	font-weight: bold;
+}
+.connected    { color: #20b729; }
+.pending      { color: #e19b13; }
+.disconnected { color: #cb0000; }
