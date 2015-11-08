@@ -1,18 +1,18 @@
 angular.module('starter.controllers', [])
 
-.controller('MenuController', function () {
+.controller('MenuController', function ($scope, $localStorage) {
   console.log('MenuController');
+
+  $scope.$storage = $localStorage;
 })
 
 .controller('ControlController', function ($scope) {
   console.log('DroneController');
 
-  $scope.truc = function () {
-    console.log('aa');
-  }
+
 })
 
-.controller('StatusController', function ($scope, $ionicLoading, $localStorage, Status) {
+.controller('StatusController', function ($scope, $rootScope, $ionicLoading, $localStorage, Status, Drone) {
   console.log('StatusController');
 
   $scope.$storage = $localStorage;
@@ -20,6 +20,14 @@ angular.module('starter.controllers', [])
   $scope.status = Status.disconnected;
 
   $scope.synchronize = function () {
-    
-  }
+    console.log("Synchronize()");
+
+    $rootScope.drone = new Drone({
+      host: $scope.$storage.host,
+      port: $scope.$storage.port
+    });
+
+    window.drone = $rootScope.drone;
+  };
+
 })
