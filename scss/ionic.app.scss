@@ -27,3 +27,8 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .connected    { color: #20b729; }
 .pending      { color: #e19b13; }
 .disconnected { color: #cb0000; }
+
+.button-control {
+	border-radius: 10px;
+	border: 1px lightgrey solid;
+}

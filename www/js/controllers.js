@@ -4,15 +4,11 @@ angular.module('starter.controllers', [])
   console.log('MenuController');
 })
 
-.controller('ControlController', function () {
+.controller('ControlController', function ($scope) {
   console.log('DroneController');
-})
 
-.factory('Status', function () {
-  return {
-    connected:    {message: 'connected',    class: 'connected'    },
-    pending:      {message: 'pending',      class: 'pending'      },
-    disconnected: {message: 'disconnected', class: 'disconnected' }
+  $scope.truc = function () {
+    console.log('aa');
   }
 })
 
@@ -21,7 +17,7 @@ angular.module('starter.controllers', [])
 
   $scope.$storage = $localStorage;
 
-  $scope.status = Status.connected;
+  $scope.status = Status.disconnected;
 
   $scope.synchronize = function () {
     

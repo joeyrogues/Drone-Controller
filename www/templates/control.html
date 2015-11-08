@@ -1,13 +1,38 @@
-<ion-view view-title="Aircraft Control Center">
+<ion-view view-title="Control Center">
   <ion-content>
 
-  	<ion-list class="list">
+  	<button class="col button button-positive" ng-click="drone.takeoff()">Takeoff</button>
+  	<button class="col button button-assertive" ng-click="drone.landing()">Landing</button>
 
-  		<ion-item class="item">
-  			TODO
-  		</ion-item>
+  	<div class="card">
+  		<div class="item item-text-wrap">
+			This is a basic Card which contains an item that has wrapping text.
+	  	</div>
+  	</div>
 
-  	</ion-list>
+  	<div style="font-size: 4em;">
+	  	<div class="row text-center">
+	  		<div class="col-offset-33 col-33 button-control" ng-click="drone.move('forward')">
+	  			<i class="icon ion-arrow-up-a"></i>  			
+	  		</div>
+	  	</div>
+	  	<div class="row text-center">
+	  		<div class="col-33 button-control" ng-click="drone.move('left')">
+	  			<i class="icon ion-arrow-left-a"></i>
+	  		</div>
+	  		<div class="col-33 button-control" ng-click="drone.move('stable')">
+	  			<i class="icon ion-android-radio-button-on"></i>
+	  		</div>
+	  		<div class="col-33 button-control" ng-click="drone.move('right')">
+	  			<i class="icon ion-arrow-right-a"></i>
+	  		</div>
+	  	</div>
+	  	<div class="row text-center">
+	  		<div class="col-offset-33 col-33 button-control" ng-click="drone.move('backward')">
+	  			<i class="icon ion-arrow-down-a"></i>
+	  		</div>
+	  	</div>
+  	</div>
 
   </ion-content>
 </ion-view>
