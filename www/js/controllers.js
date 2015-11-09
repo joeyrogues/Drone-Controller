@@ -42,6 +42,7 @@ angular.module('starter.controllers', [])
     });
 
     window.drone = $rootScope.drone;
+    window.scope = $scope;
   };
 
 })
