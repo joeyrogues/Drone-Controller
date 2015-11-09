@@ -3,12 +3,23 @@
     
   	<ion-list>
 
+      <ion-item class="item-icon-left">
+        <i class="icon ion-clock"></i>
+        Last check
+        <span ng-if="lastCheck" class="item-note status">
+          {{lastCheck | date:'H:mm:ss'}}
+        </span>
+        <span ng-if="!lastCheck" class="item-note status">
+          Never
+        </span>
+      </ion-item>
+
   		<ion-item class="item-icon-left">
   			<i class="icon ion-social-rss"></i>
   			Status
   			<span class="item-note status {{status.class}}">
-  				{{status.message | capitalize}}
-  			</span>
+          {{status.message | capitalize}}
+        </span>
   		</ion-item>
 
   		<ion-item class="item item-icon-left">
@@ -27,7 +38,9 @@
 
   		<button class="button button-full button-positive" style="margin: 0;" ng-click="synchronize()">
   			Synchronize
-		</button>
+		  </button>
+
+
 
   	</ion-list>
 

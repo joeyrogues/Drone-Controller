@@ -51,11 +51,9 @@ angular.module('starter.services', [])
 		return this._move('right');
 	};
 
-	return Drone;
-})
+	Drone.prototype.ping = function () {
+		return $http.get(this._getBaseUrl() + 'ping');
+	};
 
-.factory('DroneService', function () {
-  return {
-  		
-  };
+	return Drone;
 });

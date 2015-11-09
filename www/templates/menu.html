@@ -19,7 +19,7 @@
     <ion-content>
       <ion-list>
         
-        <ion-item menu-close ui-sref="app.control">Control Center</ion-item>
+        <ion-item ng-show="isConnected" menu-close ui-sref="app.control">Control Center</ion-item>
 
         <ion-item menu-close ui-sref="app.status">Status</ion-item>
 
