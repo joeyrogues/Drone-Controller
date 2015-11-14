@@ -9,6 +9,7 @@ angular.module('starter.controllers', [])
 .controller('ControlController', function ($scope) {
   console.log('DroneController');
 
+  
 })
 
 .controller('StatusController', function ($timeout, $scope, $rootScope, $ionicLoading, $localStorage, Status, Drone) {

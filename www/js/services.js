@@ -8,7 +8,19 @@ angular.module('starter.services', [])
   }
 })
 
-.factory('Drone', function ($http) {
+.factory('LogEntry', function () {
+	var LogEntry = function (params) {
+		var params = params || {};
+
+		this.timestamp = params.timestamp || Date.now();
+		this.status    = params.status    || '-';
+		this.message   = params.message   || '-';
+	};
+
+	return LogEntry;
+})
+
+.factory('Drone', function ($http, LogEntry) {
 	var Drone = function (params) {
 		if (!params) {
 			throw 'Drone: Missing parameters';
@@ -21,17 +33,30 @@ angular.module('starter.services', [])
 
 		this.host = params.host;
 		this.port = params.port;
+
+		this.logs = [];
 	};
 
 	Drone.prototype._getBaseUrl = function () {
 		return 'http://' + this.host + ':' + this.port +'/';
 	};
 
+	Drone.prototype.getLogs = function () {
+		return this.logs;
+	};
+
 	Drone.prototype._move = function (direction) {
+		var self = this;
+
 		return $http.post(this._getBaseUrl() + 'move', {
 			direction: direction
 		}).then(function (response) {
 			console.log(response);
+
+			self.logs.push(new LogEntry({
+				message: 'Moving ' + direction,
+				status:  response.statusText
+			}));
 		});
 	};
 

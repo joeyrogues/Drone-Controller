@@ -1,14 +1,8 @@
 <ion-view view-title="Control Center">
   <ion-content>
 
-  	<button class="col button button-positive" ng-click="drone.takeoff()">Takeoff</button>
-  	<button class="col button button-assertive" ng-click="drone.landing()">Landing</button>
-
-  	<div class="card">
-  		<div class="item item-text-wrap">
-			This is a basic Card which contains an item that has wrapping text.
-	  	</div>
-  	</div>
+  	<button class="col button button-balanced" ng-click="drone.takeoff()">Takeoff</button>
+  	<button class="col button button-balanced" ng-click="drone.landing()">Landing</button>
 
   	<div style="font-size: 50px;">
 	  	<div class="row text-center">
@@ -33,6 +27,13 @@
 	  		<div class="col col-offset-33 col-33 button-control" ng-click="drone.moveBackward()">
 	  			<i class="icon ion-arrow-down-a"></i>
 	  		</div>
+	  	</div>
+  	</div>
+
+  	<div class="card">
+  		<div class="item item-text-wrap" ng-repeat="log in drone.getLogs() | orderBy:timestamp:true | limitTo:6">
+			{{log.message}}
+			<span class="item-note">{{log.status}}</span>
 	  	</div>
   	</div>
 
