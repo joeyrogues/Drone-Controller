@@ -20,7 +20,10 @@ angular.module('starter.controllers', [])
   $scope.status = Status.disconnected;
 
   $scope.synchronize = function () {
-    $ionicLoading.show();
+    $ionicLoading.show({
+      templateUrl: 'templates/partials/loading.html',
+      scope:       $scope
+    });
     $scope.status = Status.pending;
 
     $rootScope.drone = new Drone({
@@ -28,22 +31,28 @@ angular.module('starter.controllers', [])
       port: $scope.$storage.port
     });
     
-    $rootScope.drone.ping().then(function (response) {
-      $scope.status = Status.connected;
-      $rootScope.isConnected = true;
+    $timeout(function() {
+      $rootScope.drone.ping().then(function (response) {
+        $scope.status = Status.connected;
+        $rootScope.isConnected = true;
 
-    }).catch(function () {
-      $scope.status = Status.disconnected;
-      $rootScope.isConnected = false;
+      }).catch(function () {
+        $scope.status = Status.disconnected;
+        $rootScope.isConnected = false;
 
-    }).finally(function () {
-      $scope.lastCheck = Date.now();
+      }).finally(function () {
+        $scope.lastCheck = Date.now();
 
-      $ionicLoading.hide();
-    });
+        $timeout(function () {
+          $ionicLoading.hide();
+        }, 500);
+      });
+    }, 500);
 
     window.drone = $rootScope.drone;
     window.scope = $scope;
+
+    window.truc = $timeout
   };
 
 })

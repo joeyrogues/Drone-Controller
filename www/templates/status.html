@@ -3,6 +3,10 @@
     
   	<ion-list>
 
+      <button class="button button-full button-balanced" style="margin: 0;" ng-click="synchronize()">
+        Synchronize
+      </button>
+
       <ion-item class="item-icon-left">
         <i class="icon ion-clock"></i>
         Last check
@@ -35,12 +39,6 @@
           <input type="text" ng-model="$storage.port" class="text-right" placeholder="80">
         </label>
       </ion-item>
-
-  		<button class="button button-full button-positive" style="margin: 0;" ng-click="synchronize()">
-  			Synchronize
-		  </button>
-
-
 
   	</ion-list>
 
