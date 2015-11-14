@@ -30,7 +30,7 @@
 	  	</div>
   	</div>
 
-  	<div class="card">
+  	<div class="card" ng-show="drone.getLogs().length > 0">
   		<div class="item item-text-wrap" ng-repeat="log in drone.getLogs() | orderBy:timestamp:true | limitTo:6">
 			{{log.message}}
 			<span class="item-note">{{log.status}}</span>
