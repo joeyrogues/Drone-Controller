@@ -15,6 +15,7 @@ angular.module('starter.services', [])
 		this.timestamp = params.timestamp || Date.now();
 		this.status    = params.status    || '-';
 		this.message   = params.message   || '-';
+		this.icon      = params.icon      || 'ion-jet';
 	};
 
 	return LogEntry;
@@ -54,6 +55,7 @@ angular.module('starter.services', [])
 			console.log(response);
 
 			self.logs.push(new LogEntry({
+				icon:    'ion-arrow-move',
 				message: 'Moving ' + direction,
 				status:  response.statusText
 			}));

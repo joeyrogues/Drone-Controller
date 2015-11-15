@@ -29,7 +29,8 @@
   	</div>
 
   	<div class="card" ng-show="drone.getLogs().length > 0">
-  		<div class="item item-text-wrap" ng-repeat="log in drone.getLogs() | orderBy:timestamp:true | limitTo:6">
+  		<div class="item item-text-wrap item-icon-left" ng-repeat="log in drone.getLogs() | orderBy:timestamp:true | limitTo:6">
+			<i ng-show="log.icon" class="icon calm {{log.icon}}"></i>
 			{{log.message}}
 			<span class="item-note">{{log.status}}</span>
 	  	</div>
