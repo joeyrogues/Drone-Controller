@@ -18,15 +18,9 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
-$light:                           #ffffff !default;
-$stable:                          #E5F0FF !default;
-$positive:                        #3BCF29 !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #1493FF !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #E10E0E !default;
-$royal:                           #886aea !default;
-$dark:                            #444444 !default;
+$good:      #81E043 !default;
+$average:   #FFA054 !default
+$bad:       #FF342B !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
@@ -34,9 +28,9 @@ $dark:                            #444444 !default;
 .status {
 	font-weight: bold;
 }
-.connected    { color: #20b729; }
-.pending      { color: #e19b13; }
-.disconnected { color: #cb0000; }
+.connected    { color: $good;    }
+.pending      { color: $average; }
+.disconnected { color: $bad;     }
 
 .button-control {
 	border-radius: 10px;

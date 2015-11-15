@@ -3,12 +3,12 @@
     
   	<ion-list>
 
-      <button class="button button-full button-balanced" style="margin: 0;" ng-click="synchronize()">
+      <button class="button button-full button-calm" style="margin: 0;" ng-click="synchronize()">
         Synchronize
       </button>
 
       <ion-item class="item-icon-left">
-        <i class="icon ion-clock balanced"></i>
+        <i class="icon ion-clock calm"></i>
         Last check
         <span ng-if="lastCheck" class="item-note status">
           {{lastCheck | date:'H:mm:ss'}}
@@ -19,7 +19,7 @@
       </ion-item>
 
   		<ion-item class="item-icon-left">
-  			<i class="icon ion-social-rss balanced"></i>
+  			<i class="icon ion-social-rss calm"></i>
   			Status
   			<span class="item-note status {{status.class}}">
           {{status.message | capitalize}}
@@ -27,14 +27,14 @@
   		</ion-item>
 
   		<ion-item class="item item-icon-left">
-          <i class="icon ion-at balanced"></i>
+          <i class="icon ion-at calm"></i>
           <label class="item item-input">
           <input type="text" ng-model="$storage.host" class="text-right" placeholder="127.0.0.1">
         </label>
       </ion-item>
 
       <ion-item class="item item-icon-left">
-          <i class="icon ion-pound balanced"></i>
+          <i class="icon ion-pound calm"></i>
           <label class="item item-input">
           <input type="text" ng-model="$storage.port" class="text-right" placeholder="80">
         </label>

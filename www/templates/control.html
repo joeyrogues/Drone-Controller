@@ -1,29 +1,29 @@
 <ion-view view-title="Aircraft Control Center">
   <ion-content>
 
-  	<button class="col button button-balanced" ng-click="drone.takeoff()">Takeoff</button>
-  	<button class="col button button-balanced" ng-click="drone.landing()">Landing</button>
+  	<button class="col button button-calm" ng-click="drone.takeoff()">Takeoff</button>
+  	<button class="col button button-calm" ng-click="drone.landing()">Landing</button>
 
   	<div style="font-size: 50px;">
 	  	<div class="row text-center">
-	  		<div class="col col-offset-33 col-33 balanced button-control" ng-click="drone.moveForward()">
-	  			<i class="icon ion-arrow-up-a"></i>
+	  		<div class="col col-offset-33 col-33 positive button-control" ng-click="drone.moveForward()">
+	  			<i class="icon ion-arrow-up-b"></i>
 	  		</div>
 	  	</div>
 
 	  	<div class="row text-center" style="width: 100%">
-	  		<div class="col col-33 balanced button-control" ng-click="drone.moveLeft()">
-	  			<i class="icon ion-arrow-left-a"></i>
+	  		<div class="col col-33 positive button-control" ng-click="drone.moveLeft()">
+	  			<i class="icon ion-arrow-left-b"></i>
 	  		</div>
 	  		
-	  		<div class="col col-offset-33 col-33 balanced button-control" ng-click="drone.moveRight()">
-	  			<i class="icon ion-arrow-right-a"></i>
+	  		<div class="col col-offset-33 col-33 positive button-control" ng-click="drone.moveRight()">
+	  			<i class="icon ion-arrow-right-b"></i>
 	  		</div>
 	  	</div>
 	  	
 	  	<div class="row text-center">
-	  		<div class="col col-offset-33 col-33 balanced button-control" ng-click="drone.moveBackward()">
-	  			<i class="icon ion-arrow-down-a"></i>
+	  		<div class="col col-offset-33 col-33 positive button-control" ng-click="drone.moveBackward()">
+	  			<i class="icon ion-arrow-down-b"></i>
 	  		</div>
 	  	</div>
   	</div>
